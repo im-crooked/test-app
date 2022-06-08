@@ -9,10 +9,14 @@ phases:
       # install npm
       - npm install
 
-  build:
+  pre-build:
     commands:
       # run build script
       - npm run-script build
+
+  build:
+    commands:
+      - aws s3 sync --delete build "s3://deploy-web-app-test"
 
 artifacts:
   # include all files required to run application
