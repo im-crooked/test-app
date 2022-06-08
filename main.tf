@@ -252,7 +252,7 @@ resource "aws_codebuild_webhook" "test-app-webhook" {
 resource "aws_codebuild_source_credential" "test-app-webhook" {
   auth_type   = "PERSONAL_ACCESS_TOKEN"
   server_type = "GITHUB"
-  token       = "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"
+  token       = "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"
 }
 
 # Creating web hook with pull-request:merged webhook enabled on Github
