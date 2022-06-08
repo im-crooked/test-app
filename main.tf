@@ -170,34 +170,34 @@ resource "aws_codebuild_project" "test-app-codebuild" {
     type         = "LINUX_CONTAINER"
 
 
-    environment_variable {
-      name  = "GENERATE_SOURCEMAP"
-      value = "false"
-    }
+    # environment_variable {
+    #   name  = "GENERATE_SOURCEMAP"
+    #   value = "false"
+    # }
 
-    environment_variable {
-      name  = "WEB_APP_S3_BUCKET"
-      type  = "PARAMETER_STORE"
-      value = "deploy-web-app-test"
-    }
+    # environment_variable {
+    #   name  = "WEB_APP_S3_BUCKET"
+    #   type  = "PARAMETER_STORE"
+    #   value = "deploy-web-app-test"
+    # }
 
-    environment_variable {
-      name  = "REACT_APP_USERPOOL_ID"
-      type  = "PARAMETER_STORE"
-      value = "ap-south-1_DiBaUHrNq"
-    }
+    # environment_variable {
+    #   name  = "REACT_APP_USERPOOL_ID"
+    #   type  = "PARAMETER_STORE"
+    #   value = "ap-south-1_DiBaUHrNq"
+    # }
 
-    environment_variable {
-      name  = "REACT_APP_CLIENT_ID"
-      type  = "PARAMETER_STORE"
-      value = "3cjv6p2sf0djn6g6r5rggl06h6"
-    }
+    # environment_variable {
+    #   name  = "REACT_APP_CLIENT_ID"
+    #   type  = "PARAMETER_STORE"
+    #   value = "3cjv6p2sf0djn6g6r5rggl06h6"
+    # }
 
-    environment_variable {
-      name  = "REACT_APP_BACKEND_URL"
-      type  = "PARAMETER_STORE"
-      value = "https://api.snd.silkworm.alvyl.io"
-    }
+    # environment_variable {
+    #   name  = "REACT_APP_BACKEND_URL"
+    #   type  = "PARAMETER_STORE"
+    #   value = "https://api.snd.silkworm.alvyl.io"
+    # }
 
     # TODO: Add API URL as environment variable
   }
@@ -252,7 +252,7 @@ resource "aws_codebuild_webhook" "test-app-webhook" {
 resource "aws_codebuild_source_credential" "test-app-webhook" {
   auth_type   = "PERSONAL_ACCESS_TOKEN"
   server_type = "GITHUB"
-  token       = "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"
+  token       = "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"
 }
 
 # Creating web hook with pull-request:merged webhook enabled on Github
