@@ -1,35 +1,15 @@
-#
-# Buildspec for Code Build project for React web app
-#
-# Author: Milind Mantri <milind@alvyl.com>
-#
-
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: 10
+  pre_build:
     commands:
-      - echo Logging the environment
-      - printenv
-      - echo Entered the install phase...
-      - pwd
-      - sh ./web-pipeline-build/run-pipeline-all.sh "install"
-    finally:
-      - echo This always runs even if the update or install command fails
-  # FIXME: Deleted the pre-build stage. Add if Code Build fails
+      - npm install
   build:
     commands:
-      - echo Entered the build phase, building cloud services...
-      - echo Build started on `date`
-      - pwd
-      - sh ./web-pipeline-build/run-pipeline-all.sh "build"
-    finally:
-      - echo Finished [build] phase
-  post_build:
-    commands:
-      - echo Entered the post_build phase, deploy to S3...
-      - pwd
-      - sh ./web-pipeline-build/run-pipeline-all.sh "deploy"
-      - echo Build completed on `date`
+      - npm run build
+
+artifacts:
+  files:
+    - "**/*"
+  discard-paths: no
+  base-directory: build
