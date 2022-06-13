@@ -166,7 +166,7 @@ resource "aws_codebuild_project" "test-app-codebuild" {
 
   environment {
     compute_type = "BUILD_GENERAL1_SMALL"
-    image        = "aws/codebuild/standard:2.0"
+    image        = "aws/codebuild/standard:5.0"
     type         = "LINUX_CONTAINER"
 
 
@@ -252,7 +252,7 @@ resource "aws_codebuild_webhook" "test-app-webhook" {
 resource "aws_codebuild_source_credential" "test-app-webhook" {
   auth_type   = "PERSONAL_ACCESS_TOKEN"
   server_type = "GITHUB"
-  token       = "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"
+  token       = "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"
 }
 
 # Creating web hook with pull-request:merged webhook enabled on Github
