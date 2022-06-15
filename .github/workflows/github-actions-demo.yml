@@ -10,7 +10,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::757184591234:role/github-actions
+          role-to-assume: arn:aws:iam::757184591234:role/github-actions-2
           aws-region: us-east-1
       - name: "AWS CodeBuild run build"
         uses: aws-actions/aws-codebuild-run-build@v1
