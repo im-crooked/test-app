@@ -1,5 +1,8 @@
 name: GitHub Actions Demo
 on: [release]
+permissions:
+  id-token: write
+  contents: read
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -7,7 +10,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::757184591234:role/avcp-silkworm-mum-snd-codebuild-cloud
+          role-to-assume: arn:aws:iam::757184591234:role/test-app-iam-web-app
           aws-region: us-east-2
       - name: "AWS CodeBuild run build"
         uses: aws-actions/aws-codebuild-run-build@v1
